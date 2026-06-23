@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauline Nekesa - Media Portfolio</title>
+    <style>
+        /* Base Reset & Colors - LIGHT BLUE DESIGN */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #e0f7fa; /* Clean, light blue background for the page */
+            color: #333333; /* Darker text for readability against light blue */
+        }
+
+        /* ----- HERO SECTION STYLE - WITH THE BACKGROUND IMAGE ----- */
+        header {
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("https://i.ibb.co/X89S6kQ/IMG-20260619-124408-033.jpg"); /* YOUR REQUIRED BACKGROUND IMAGE */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 85vh; /* Sets a generous height like the image */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Puts nav at top, content below */
+            padding: 20px 0;
+            box-sizing: border-box;
+            color: #ffffff; /* Text inside hero must be white */
+        }
+
+        /* Top Navigation Bar */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: #ffb300; /* Vibrant Orange/Yellow matching VisionFrame */
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffb300;
+        }
+
+        /* Hero Text Content Area */
+        .hero-content {
+            width: 90%;
+            max-width: 850px;
+            margin: auto auto 60px auto; /* Centers horizontally and pushes up slightly */
+            text-align: left;
+        }
+
+        .hero-content h1 {
+            color: #ffffff;
+            font-size: 3.8rem;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            color: #e0e0e0;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin: 0 0 35px 0;
+            max-width: 680px;
+        }
+
+        /* Rounded Action Button */
+        .btn-portfolio {
+            display: inline-block;
+            background-color: #ffcc00; /* Solid bold yellow button */
+            color: #000000;
+            text-decoration: none;
+            padding: 14px 35px;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .btn-portfolio:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+        }
+
+        /* ----- REST OF THE WEBSITE PORTFOLIO STYLES (UPDATED TO LIGHT BLUE) ----- */
+        section, .card {
+            background: #ffffff; /* Pure white cards for contrast */
+            margin: 30px auto;
+            padding: 30px;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+            box-sizing: border-box;
+        }
+
+        h2, h3 {
+            color: #1e3a8a; /* Deep blue headings (matches blue button) */
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            color: #333333; /* Dark text for readability */
+        }
+
+        p {
+            color: #555555; /* Medium gray paragraph text */
+            line-height: 1.6;
+        }
+
+        /* ----- SKILLS SECTION CONTAINER WITH THE SECOND BACKGROUND IMAGE ----- */
+        #skills {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://i.ibb.co/qD301h5/Gemini-Generated-Image-qeuw9rqeuw9rqeuw.png"); /* YOUR SKILLS SECTION BACKGROUND */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 45px 40px;
+            color: #ffffff; /* White text over this image */
+        }
+
+        #skills h2 {
+            color: #ffffff;
+            border-bottom: 2px solid #ffcc00;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        #skills ul {
+            list-style-type: none; 
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        #skills li {
+            background: rgba(0, 0, 0, 0.65); 
+            padding: 12px 20px;
+            border-left: 4px solid #ffcc00; 
+            border-radius: 0 8px 8px 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            color: #ffffff;
+        }
+
+        /* Skills Tags */
+        .tag {
+            display: inline-block;
+            background: #ffcc00;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Video and Audio Styling */
+        video, audio {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        /* Fieldwork description text color fine-tuning */
+        .card ul {
+            list-style-type: square;
+        }
+        
+        .card p {
+            margin: 5px 0 20px 0;
+            color: #555555;
+        }
+
+        .card strong {
+            color: #1e3a8a; /* Deep blue details */
+        }
+
+        /* ----- CLICKABLE CONTACT & SOCIAL LINK STYLES ----- */
+        .contact-link, .social-link {
+            color: #1e3a8a; /* Deep blue links */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease, text-decoration 0.2s ease;
+        }
+
+        .contact-link:hover, .social-link:hover {
+            color: #ffcc00; /* Yellow on hover */
+            text-decoration: underline;
+        }
+
+        #social ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #social li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        #social li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #e0f7fa; /* Match back to light blue page background color */
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            color: #888888;
+            margin-top: 50px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO IMAGE HEADER SECTION - Image now linked correctly -->
+<header>
+    <!-- Top Navigation -->
+    <nav class="nav-bar">
+        <a href="#" class="logo">Pauline Nekesa</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Dynamic Hero Content -->
+    <div class="hero-content">
+        <h1>Radio Producer<br>News Reporter & Editor</h1>
+        <p>I am a passionate media practitioner with experience in radio production, news reporting, script writing, voice-over recording, and video editing.</p>
+        <a href="#projects" class="btn-portfolio">View Portfolio</a>
+    </div>
+</header>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am Pauline Nekesa a journalist in kenya,radio presenter and video editor.I am adaptable media and mass communication practioner skiled across the full production pipeline—from conducting impactful field reporting and scriptwriting to executing seamless audio and video post-production.
+        
+    </p>
+</section>
+
+<!-- SKILLS SECTION - With correct image path -->
+<section id="skills">
+    <h2>Technical & Professional Skills</h2>
+
+    <p>
+        <span class="tag">Radio Production</span><br>
+        <span class="tag">Audio Editing</span><br>
+        <span class="tag">Video Editing</span><br>
+        <span class="tag">Script Writing</span><br>
+        <span class="tag">Voice Over</span><br>
+        <span class="tag">News Writing</span><br>
+        <span class="tag">Feature Writing</span><br>
+        <span class="tag">Interviewing</span><br>
+        <span class="tag">Research</span><br>
+        <span class="tag">Live Broadcasting</span><br>
+        <span class="tag">Content Editing</span><br>
+        <span class="tag">Media Ethics</span>
+    </p>
+</section>
+
+<!-- FIELD WORK SECTION -->
+<div class="card">
+    <h2>Field Work</h2>
+    <ul>
+        <li>
+            <strong>Interviewed business owners in Embulbul</strong>
+            <p>To gather information on the state of local businesses, challenges affecting entrepreneurs, and the impact of economic conditions on their operations. The interviews provided insights for business-related news stories and feature reports.</p>
+        </li>
+        <li>
+            <strong>Covered matatu fuel protests</strong>
+            <p>By interviewing matatu operators and passengers, and collecting information on the reasons behind the protests and their effects on public transport services.</p>
+        </li>
+        <li>
+            <strong>Gathered verified news information</strong>
+            <p>Conducted research, interviews, and fact-checking from reliable sources to ensure accuracy and credibility before preparing stories for publication or broadcast.</p>
+        </li>
+        <li>
+            <strong>Community reporting assignments</strong>
+            <p>By engaging with local residents and leaders to identify issues affecting the community, document their concerns, and report on developments and events of public interest.</p>
+        </li>
+    </ul>
+</div>
+
+<!-- PROJECTS SECTION -->
+<section id="projects">
+    <h2>Projects</h2>
+    <ul>
+        <li>World No Tobacco Day Feature Story</li>
+        <li>Feed the Children Documentary</li>
+        <li>Health, Business and Education News Reports</li>
+        <li>Live Radio Show Hosting</li>
+    </ul>
+</section>
+  
+</a>
+<section id="video-reports">
+    <h2>Video Reports</h2>
+
+    <p>
+        A collection of video reports showcasing my skills in news gathering,
+        field reporting, script writing, video production, and storytelling.
+    </p>
+
+    <h3>Health Report</h3>
+    <video width="700" controls>
+        <source src="health-report.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h3>Business Report</h3>
+    <video width="700" controls>
+        <source src="business-report.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h3>Education Report</h3>
+    <video width="700" controls>
+        <source src="education-report.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</section>
+<section id="radio-samples">
+    <h2>Audio reports</h2>
+
+    <h3>News Bulletin</h3>
+    <audio controls>
+        <source src="news-bulletin.mp3" type="audio/mpeg">
+    </audio>
+
+    <h3>Feature Story</h3>
+    <audio controls>
+        <source src="feature-story.mp3" type="audio/mpeg">
+    </audio>
+
+    <h3>Voice Over Demo</h3>
+    <audio controls>
+        <source src="voice-over.mp3" type="audio/mpeg">
+    </audio>
+</section>
+
+<!-- PROFESSIONAL DEVELOPMENT SECTION -->
+<section id="professional-development">
+    <h2>Professional Development</h2>
+    <h3>AMWIK Membership Forum</h3>
+    <p>
+        I attended the Association of Media Women in Kenya (AMWIK) Membership Forum,
+        where I engaged with media professionals and gained insights on ethical journalism,
+        media practice, and professional networking. The forum enhanced my understanding
+        of the media industry and strengthened my commitment to professional growth in
+        radio production and journalism.
+    </p>
+	
+	
+</section>
+<section id="achievements">
+    <h2>Achievements & Exposure</h2>
+    <ul>
+        <li>Participated in newsroom operations and live broadcasts</li>
+        <li>Produced broadcast-ready feature stories</li>
+        <li>Developed strong field reporting skills</li>
+        <li>Gained hands-on media production experience</li>
+        <li>Attended media training forums </li>
+    </ul>
+      <a href="https://searchforhappineswithpauline.blogspot.com/2026/06/decoding-asphalt-why-kenyan-traffic.html" target="_blank"
+   style="display:inline-block; padding:10px 15px; background:#ffcc00; color:#000; text-decoration:none; border-radius:30px; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+   Visit My Blog
+</a>
+
+<section id="testimonials">
+    <h2>Testimonials</h2>
+
+    <div class="card">
+        <p>
+            Pauline demonstrated exceptional dedication during her reporting assignments.
+            Her ability to gather accurate information and present compelling stories was impressive.
+        </p>
+        <h4>- News Editor</h4>
+    </div>
+
+    <div class="card">
+        <p>
+           She consistently showed professionalism in radio production, script writing,
+            and studio operations. Pauline is a reliable and creative media practitioner.
+        </p>
+        <h4>- Radio Producer</h4>
+    </div>
+
+    <div class="card">
+        <p>
+            Pauline's video editing skills and attention to detail helped transform raw footage
+            into engaging and impactful visual stories.
+        </p>
+        <h4>- Media Supervisor</h4>
+    </div>
+</section>
+<section id="resume">
+    <h2>Resume</h2>
+
+    <p>
+        Download my CV.
+    </p>
+
+    <a href="Pauline_Nekesa_CV.pdf" download
+       style="display:inline-block;
+              padding:12px 20px;
+              background:#ffcc00;
+              color:#000;
+              text-decoration:none;
+              border-radius:30px;
+              font-weight:600;">
+         Download My CV
+    </a>
+</section>
+<!-- CONTACT SECTION -->
+<section id="contact">
+    <h2>Contact</h2>
+	<p>Lets work together-I am so committed in my work and always ready to work under no supervision.Send your message via the emailor contact me on my social media handles.
+    <p>Email: <a href="mailto:nekesapaulin203@gmail.com" class="contact-link">nekesapaulin203@gmail.com</a></p>
+    <p>Phone: <a href="tel:+254792431007" class="contact-link">+254 792 431 007</a></p>
+</section>
+
+<!-- SOCIALS SECTION -->
+<section id="social">
+    <h2>Connect With Me</h2>
+    <ul>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/254792431007" target="_blank" class="social-link">Chat on WhatsApp</a></li>
+        <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@set_usernamespace29" target="_blank" class="social-link">@set_usernamespace29</a></li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/brextonmarissa" target="_blank" class="social-link">@brextonmarissa</a></li>
+        <li><strong>Facebook:</strong> <a href="https://www.facebook.com/viddyviddy" target="_blank" class="social-link">viddyWako</a></li>
+        <li><strong>X (Twitter):</strong> <a href="https://x.com/paulinenekesa" target="_blank" class="social-link">@paulinenekesa</a></li>
+    </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Pauline Nekesa | All rights are reserved</p>
+</footer>
+
+</body>
+</html>
